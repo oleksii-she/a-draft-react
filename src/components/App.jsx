@@ -1,4 +1,7 @@
+const counter = 3;
+
 export const App = () => {
+  console.log(counter);
   return (
     <div
       style={{
@@ -7,7 +10,7 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
       React homework template
