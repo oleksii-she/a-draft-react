@@ -14,20 +14,32 @@ import ReactDOM from 'react-dom';
 
 class Counter extends Component {
   static defaultProps = {
-    step: 1,
+    step: 3,
   };
 
-  render() {
-    const { step } = this.props;
+  state = {
+    value: this.props.step,
+  };
 
+  newState = () => {
+    this.setState(prevState => {
+      return { value: prevState.value + 1 };
+    });
+    this.setState(prevState => {
+      return { value: prevState.value + 1 };
+    });
+  };
+
+  /* ... */
+
+  render() {
     return (
       <div>
-        <span>0</span>
-        <button type="button">Increment by {step}</button>
-        <button type="button">Decrement by {step}</button>
+        <span>{this.state.value}</span>
+        <button type="button" onClick={e => this.newState()}></button>
       </div>
     );
   }
 }
 
-ReactDOM.render(<Counter step={5} />, document.getElementById('root'));
+ReactDOM.render(<Counter />, document.getElementById('root'));
