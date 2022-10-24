@@ -1,19 +1,9 @@
-const counter = 3;
-
+import { FeedbackWidget } from './FeedbackWidget/FeedbackWidget';
+import { Conteiner } from './conteiner.styled';
 export const App = () => {
-  console.log(counter);
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React homework template
-    </div>
+    <Conteiner>
+      <FeedbackWidget />
+    </Conteiner>
   );
 };
