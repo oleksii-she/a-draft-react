@@ -17,18 +17,13 @@ const initialValues = {
   commit: '',
 };
 
-export const Registration = () => {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
-
+export const Registration = ({ contacts }) => {
   const handleSubmit = (values, { resetForm }) => {
     const { login, password, checked, commit } = values;
-    console.log(login);
-    setLogin({ login: values.login });
 
     resetForm();
   };
-  // console.log(login);
+
   return (
     <Formik
       initialValues={initialValues}
@@ -52,51 +47,3 @@ export const Registration = () => {
     </Formik>
   );
 };
-
-// import React from 'react';
-// import { useFormik } from 'formik';
-
-// export const Registration = () => {
-//   const formik = useFormik({
-//     initialValues: {
-//       firstName: '',
-//       lastName: '',
-//       email: '',
-//     },
-//     onSubmit: values => {
-//       console.log(values, null, 2);
-//     },
-//   });
-//   return (
-//     <form onSubmit={formik.handleSubmit}>
-//       <label htmlFor="firstName">First Name</label>
-//       <input
-//         id="firstName"
-//         name="firstName"
-//         type="text"
-//         onChange={formik.handleChange}
-//         value={formik.values.firstName}
-//       />
-
-//       <label htmlFor="lastName">Last Name</label>
-//       <input
-//         id="lastName"
-//         name="lastName"
-//         type="text"
-//         onChange={formik.handleChange}
-//         value={formik.values.lastName}
-//       />
-
-//       <label htmlFor="email">Email Address</label>
-//       <input
-//         id="email"
-//         name="email"
-//         type="email"
-//         onChange={formik.handleChange}
-//         value={formik.values.email}
-//       />
-
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// };
