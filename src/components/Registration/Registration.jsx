@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { React, useState } from 'react';
+
 import { Label, Forma } from './registration.styled';
 
 const schema = yup.object().shape({
@@ -23,11 +23,12 @@ export const Registration = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     const { login, password, checked, commit } = values;
+    console.log(login);
     setLogin({ login: values.login });
 
     resetForm();
   };
-  console.log(login);
+  // console.log(login);
   return (
     <Formik
       initialValues={initialValues}
